@@ -1,2 +1,1 @@
-public class test {test hxr
-}
+//test ysy
