@@ -1,17 +1,20 @@
 package com.ghiv.ghivnew.controller;
 
+import com.ghiv.ghivnew.service.TimerService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
 
-
 @RestController
-@RequestMapping ("/genotype")
 //鉴定分型①
 public class GenotypeController {
-    public String forwardToTimer7() {
-        return "forward:/timer7";
+    private final TimerService timer = new TimerService();
+    @RequestMapping ("/genotype")
+    public void execute(){
+        timer.Timer7();
+        recreateDirectories();
+        //quick_barcode
     }
     public void recreateDirectories() {
         String currentDirectory = "";//修改为工作目录
@@ -20,9 +23,6 @@ public class GenotypeController {
 
         deleteDir(new File(currentDirectory, "temp/temp_data"));
         new File(currentDirectory, "temp/temp_data").mkdirs();
-    }
-    public String forwardToFileUpload() {
-        return "forward:/upload";
     }
 
     private void deleteDir(File dir) {
