@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
 
+
 @RestController
 @RequestMapping ("/genotype")
 //鉴定分型①
