@@ -1,6 +1,7 @@
 package com.ghiv.ghivnew.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
@@ -8,9 +9,9 @@ import java.io.File;
 import static org.apache.catalina.startup.ExpandWar.deleteDir;
 
 @RestController
+@RequestMapping ("/genotype")
 //鉴定分型①
 public class GenotypeController {
-    @PostMapping("/genotype")
     public String forwardToTimer7() {
         return "forward:/timer7";
     }
