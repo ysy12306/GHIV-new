@@ -1,6 +1,6 @@
 package com.ghiv.ghivnew.controller;
 
-import com.ghiv.ghivnew.service.TimerService;
+import com.ghiv.ghivnew.service.ITimerService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,12 +9,18 @@ import java.io.File;
 @RestController
 //鉴定分型①
 public class GenotypeController {
-    private final TimerService timer = new TimerService();
+    private ITimerService timer;
     @RequestMapping ("/genotype")
     public void execute(){
         timer.Timer7();
         recreateDirectories();
+
         //quick_barcode
+
+        timer.Timer9();
+
+        //analysis_type
+        
     }
     public void recreateDirectories() {
         String currentDirectory = "";//修改为工作目录
