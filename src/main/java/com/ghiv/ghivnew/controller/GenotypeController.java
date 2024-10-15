@@ -10,6 +10,8 @@ import java.io.File;
 //鉴定分型①
 public class GenotypeController {
     private ITimerService timer;
+
+    //获取用户及id
     @RequestMapping ("/genotype")
     public void execute(){
         timer.Timer7();
@@ -24,10 +26,7 @@ public class GenotypeController {
     }
     public void recreateDirectories() {
         String currentDirectory = "";//修改为工作目录
-        deleteDir(new File(currentDirectory, "temp/temp_quick"));
         new File(currentDirectory, "temp/temp_quick").mkdirs();
-
-        deleteDir(new File(currentDirectory, "temp/temp_data"));
         new File(currentDirectory, "temp/temp_data").mkdirs();
     }
 
