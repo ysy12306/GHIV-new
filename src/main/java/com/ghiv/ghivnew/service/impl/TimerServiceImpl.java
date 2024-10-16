@@ -1,10 +1,10 @@
 package com.ghiv.ghivnew.service.impl;
 
-import com.ghiv.ghivnew.service.ITimerService;
+import com.ghiv.ghivnew.service.TimerService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ITimerServiceImpl implements ITimerService {
+public class TimerServiceImpl implements TimerService {
     public void Timer7() {
 
     }

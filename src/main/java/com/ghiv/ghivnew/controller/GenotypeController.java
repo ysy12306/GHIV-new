@@ -1,6 +1,6 @@
 package com.ghiv.ghivnew.controller;
 
-import com.ghiv.ghivnew.service.ITimerService;
+import com.ghiv.ghivnew.service.TimerService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,7 +9,7 @@ import java.io.File;
 @RestController
 //鉴定分型①
 public class GenotypeController {
-    private ITimerService timer;
+    private TimerService timer;
 
     //获取用户及id
     @RequestMapping ("/genotype")
@@ -40,5 +40,9 @@ public class GenotypeController {
             }
         }
         dir.delete();
+    }
+
+    public void setTimer(TimerService timer) {
+        this.timer = timer;
     }
 }
