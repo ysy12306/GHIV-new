@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+app:
+  analysis-dir: analysis
+  history-dir: history
+  temp-dir: ${java.io.tmpdir} 
